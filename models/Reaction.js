@@ -1,6 +1,8 @@
 const { Schema, Types } = require("mongoose");
+const dateTimeStamp = require("../utils/date-util");
 
 // Schema to create User model
+
 const reactionSchema = new Schema(
   {
     reactionId: {
@@ -19,12 +21,12 @@ const reactionSchema = new Schema(
     createdAt: {
       type: Date,
       default: Date.now,
-      //getter here
+      get: () => dateTimeStamp(),
     },
   },
   {
     toJSON: {
-      virtuals: true,
+      getters: true,
     },
     id: false,
   }
