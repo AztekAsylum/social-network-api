@@ -8,11 +8,15 @@ module.exports = {
     } catch (error) {
       res.status(500).json(error);
     }
-    console.log("get all thoughts");
   },
 
   async getOneThought(req, res) {
-    console.log("get one thought");
+    try {
+      const thought = await Thought.findOne({ _id: req.params.thoughtId });
+      res.status(200).json(thought);
+    } catch (error) {
+      res.status(500).json(error);
+    }
   },
 
   async createThought(req, res) {
@@ -32,7 +36,6 @@ module.exports = {
     } catch (error) {
       res.status(500).json(error);
     }
-    console.log("create one thought");
   },
 
   async updateThought(req, res) {
@@ -74,7 +77,6 @@ module.exports = {
       );
       res.status(200).json(thought);
     } catch (error) {
-      console.log(error);
       res.status(500).json(error);
     }
   },

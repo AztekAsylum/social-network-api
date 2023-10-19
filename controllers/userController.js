@@ -2,7 +2,6 @@ const { Thought, User } = require("../models");
 
 module.exports = {
   async getAllUsers(req, res) {
-    console.log("get all users");
     try {
       const users = await User.find();
       res.status(200).json(users);
@@ -19,7 +18,6 @@ module.exports = {
 
       res.status(200).json(users);
     } catch (error) {
-      console.log(error);
       res.status(500).json(error);
     }
   },
