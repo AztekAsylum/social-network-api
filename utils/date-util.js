@@ -1,6 +1,5 @@
-const dateTimeStamp = function () {
-  const date = Date.now();
-  const formatedDate = new Date(date).toString();
+const dateTimeStamp = function (timeStamp) {
+  const formatedDate = new Date(timeStamp).toString();
   return formatedDate;
 };
 

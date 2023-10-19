@@ -14,15 +14,14 @@ const thoughtSchema = new Schema(
     createdAt: {
       type: Date,
       default: Date.now,
-      get: () => dateTimeStamp(),
+      get: (timeStamp) => dateTimeStamp(timeStamp),
     },
     username: {
       type: String,
       required: true,
     },
-    reactions: {
+  
       reactions: [reactionSchema],
-    },
   },
   {
     toJSON: {
