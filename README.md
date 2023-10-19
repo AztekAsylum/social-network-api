@@ -17,7 +17,7 @@ This is the backend for a social network database with routes where users can sh
 
 ## Installation
 
-Clone the repo, run `npm i`, run `npm run dev `, open Insomnia and run routes.
+Clone the repo, run `npm i`, run `npm run dev `, open Insomnia and run routes provided by the `TestRoutes.json` file.
 
 ## Usage
 
